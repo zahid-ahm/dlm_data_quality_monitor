@@ -61,7 +61,9 @@ This gives an effective memory of roughly $1/(1-\delta) \approx 33$ days.
 
 **Monitoring.** The standardised forecast error $e_t = |y_t - f_t|/\sqrt{S_t}$ feeds a sequential likelihood ratio test. $B_t$ is the likelihood ratio of a $\kappa$-sd shift ($\kappa = 3$) against the null, accumulated across days, and reset to 1 after an alert:
 
-$$B_t = \exp\!\Big(\kappa e_t - \tfrac{\kappa^2}{2}\Big), \qquad C_t = B_t \max(C_{t-1}, 1)$$
+```math
+B_t = \exp\!\Big(\kappa e_t - \tfrac{\kappa^2}{2}\Big), \qquad C_t = B_t \max(C_{t-1}, 1)
+```
 
 An alert is raised when $C_t > \tau$ ($\tau = 100$). The absolute value catches drops as well as spikes. A slow drift accumulates in the running product even when no single day looks off.
 
