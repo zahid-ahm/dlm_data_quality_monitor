@@ -41,7 +41,9 @@ $$\theta_t = (\mu,\ \beta,\ c_1,\ s_1,\ c_2,\ s_2,\ c_3,\ s_3)^\top$$
 
 $F$ is block diagonal: a second-order polynomial trend plus one rotation per harmonic at $\omega_j = 2\pi j/7$.
 
-$$F = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \oplus \bigoplus_{j=1}^{3} \begin{pmatrix} \cos\omega_j & \sin\omega_j \\ -\sin\omega_j & \cos\omega_j \end{pmatrix}, \qquad H = (1,0,1,0,1,0,1,0)$$
+```math
+F = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \oplus \bigoplus_{j=1}^{3} \begin{pmatrix} \cos\omega_j & \sin\omega_j \\ -\sin\omega_j & \cos\omega_j \end{pmatrix}, \qquad H = (1,0,1,0,1,0,1,0)
+```
 
 Three harmonics span the six seasonal degrees of freedom of a 7-day cycle, and $H$ reads the level plus the cosine term of each harmonic.
 
