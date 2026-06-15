@@ -11,7 +11,7 @@ class Monitor:
         e = abs(y - f) / np.sqrt(S)
         p = 2 * norm.sf(e)
         # Bayes factor of a k-sd shift against the model, accumulated
-        e = min(e, 40)
+        e = min(e, 40) # avoid exp overflow on extreme errors
         B = np.exp(self.k * e - 0.5 * self.k ** 2)
         self.C = B * max(self.C, 1)
         alert = self.C > self.tau
